@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trio Fashion</title>
+    <link rel="icon" type="image/png" href="trio-fashion-logo.png" class="w-12 h-12 rounded-full" >
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            background: #fff7ee;
+        }
+
+        .hero-pattern {
+            background-color: #f7eada;
+            background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .product-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .btn-order {
+            transition: all 0.2s ease-in-out;
+        }
+
+        .btn-order:active {
+            transform: scale(0.95);
+        }
+
+        .image-box {
+            position: relative;
+            width: 500px;
+            height: 600px;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .image-box img {
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            transition: transform 0.5s ease;
+        }
+
+    
+
+        .image-placeholder {
+            background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+            border-radius: 5px;
+            background-size: 200% 100%;
+            animation: 1.5s shine linear infinite;
+        }
+
+        @keyframes shine {
+            to {
+                background-position-x: -200%;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .image-box {
+                display: hidden;
+            }
+
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 antialiased flex flex-col min-h-screen">
+
+    <!-- NavBar-->
+
+    <nav class="bg-white shadow-sm sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex-shrink-0 flex items-center justify-item-center gap-2">
+
+                        <span class="font-bold text-xl tracking-tight text-gray-900">Trio Fashion</span>
+                    </a>
+                </div>
+                <div class="sm:ml-6 flex space-x-10 items-center">
+                    <a href="index.html"
+                        class="text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium">
+                        Home
+                    </a>
+                    <a href="#collection"
+                        class="text-gray-500 hover:text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium transition-colors">
+                        Collections
+                    </a>
+                    <!-- <a href="#"
+                        class="text-gray-500 hover:text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 border-transparent hover:border-gray-300 text-sm font-medium transition-colors">
+                        About Us
+                    </a> -->
+
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div
+        class="relative bg-white overflow-hidden hero-pattern py-12 md:py-16 justify-content-center align-items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+                <div class="text-center lg:text-left space-y-6">
+
+                    <div>
+                        <span
+                            class="inline-block py-1 px-3 rounded-full bg-indigo-50 text-amber-600 text-xs sm:text-sm font-semibold tracking-wide border border-amber-200">
+                            New Arrivals Spring '2026
+                        </span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight leading-tight">
+                        <span class="block">Trio Fashion</span>
+                        <span class="block text-amber-600">Your Signature Style.</span>
+                    </h1>
+
+                    <p class="text-base text-gray-500 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                        Classics at Trio Fashion. Premium quality clothes designed to make you feel confident and
+                        comfortable every day.
+                    </p>
+
+                </div>
+
+                <div class="hidden sm:block relative w-full h-64 sm:h-80 md:h-96 lg:h-max[700px]" id="hero-image">
+                    <img src="hero-image.png" alt="Nova Apparel Hero Image"
+                        class="w-full h-full rounded-xl object-cover object-center shadow-lg" />
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Grid -->
+
+
+    <section class="bg-gray-50 py-12" id="collection">
+
+
+                  <!--1 Cards Section-->
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="text-center mb-10">
+                <h2 class="text-2xl font-extrabold text-amber-600 sm:text-2xl">Formal Collection</h2>
+                <p class="mt-3 max-w-2xl mx-auto text-base text-gray-500 sm:mt-4">Choose your style and order
+                    directly.</p>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+
+                <!-- Product Card 1 -->
+
+                <div
+                    class="bg-white border border-gray-100 rounded-1xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+
+                    <div class="relative w-full h-auto bg-gray-100 overflow-hidden">
+                        <a href="/Product_1/product_1.html">
+                            <img src="/Product_1/sand-floral_1-shirt.png" alt="Product Name Here"
+                                class="w-full sm:h-[400px] object-cover object-center" />
+                        </a>
+                        <span
+                            class="absolute top-3 left-3 bg-red-500 text-white text-xs font-bold px-2.5 py-1 rounded-full shadow">15%
+                            OFF</span>
+                    </div>
+
+                    <div class="mt-4 pl-4 flex-grow flex flex-col justify-between">
+                        <div>
+                            <!-- Text is 10px on mobile, grows to 12px (text-xs) on desktop -->
+                            <span class="text-[10px] sm:text-xs font-semibold tracking-wider text-amber-600 uppercase"
+                                id="shirt">
+                                Shirt
+                            </span>
+
+                            <!-- Text is 12px (text-xs) on mobile, grows to 14px (text-sm) on desktop -->
+                            <h3 class="text-xs sm:text-lg font-bold text-gray-800 mt-1 line-clamp-2">
+                                <a href="/Product_1/product_1.html">Premium Quality Floral Formal Shirt</a>
+                            </h3>
+                        </div>
+
+                        <div class="flex ml-auto pr-5 gap-3 mb-3">
+                            <span class="text-xs sm:text-sm text-gray-400 mt-2 line-through">700৳</span> <!-- Original Price -->
+                            <span class="text-1xl sm:text-2x1 font-black text-amber-600">560৳</span> <!-- Discounted Price -->
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+                <!-- Product Card 2 -->
+
+                <div
+                    class="bg-white border border-gray-100 rounded-1xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                    <div class="relative w-full h-auto bg-gray-100 overflow-hidden">
+                        <a href="/Product_2/product_2.html">
+                            <img src="/Product_2/sage-green-formal_1-shirt.png" alt="Product Name Here"
+                                class="w-full sm:h-[400px] object-cover object-center" />
+                        </a>
+                        <span
+                            class="absolute top-3 left-3 bg-red-500 text-white text-xs font-bold px-2.5 py-1 rounded-full shadow">20%
+                            OFF</span>
+                    </div>
+                    <div class="mt-4 flex-grow pl-4 flex flex-col justify-between">
+                        <div>
+                            <span class="text-[10px] sm:text-xs font-semibold tracking-wider text-amber-600 uppercase"
+                                id="shirt">Shirt</span>
+
+
+                            <h3 class="text-xs sm:text-lg font-bold text-gray-800 mt-1 line-clamp-2"><a
+                                    href="/Product_2/product_2.html">Premium Quality Floral Formal Shirt</a></h3>
+                        </div>
+                        <div class="flex ml-auto pr-5 gap-3 mb-3">
+                            <span class="text-xs sm:text-sm text-gray-400  line-through">700৳</span> <!-- Original Price -->
+                            <span class="text-1xl sm:text-2x1 font-black text-amber-600">560৳</span> <!-- Discounted Price -->
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Product Card 3 -->
+
+                <div
+                    class="bg-white border border-gray-100 rounded-1xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+
+                    <div class="relative w-full h-auto bg-gray-100 overflow-hidden">
+                        <a href="/Product_3/product_3.html">
+                            <img src="/Product_3/black-formal_1-shirt.png" alt="Product Name Here"
+                                class="w-full w-full sm:h-[400px] object-cover object-center" />
+                        </a>
+                        <span
+                            class="absolute top-3 left-3 bg-red-500 text-white text-xs font-bold px-2.5 py-1 rounded-full shadow">20%
+                            OFF</span>
+                    </div>
+
+                    <div class="mt-4 flex-grow pl-4 flex flex-col justify-between">
+                        <div>
+                            <span class="text-[10px] sm:text-xs font-semibold tracking-wider text-amber-600 uppercase"
+                                id="shirt">Shirt</span>
+
+
+                            <h3 class="text-xs sm:text-lg font-bold text-gray-800 mt-1 line-clamp-2"><a
+                                    href="/Product_3/product_3.html">Premium Quality Black Stretch Fabric Formal Shirt</a></h3>
+                        </div>
+
+                        <div class="flex ml-auto pr-5 gap-3 mb-3">
+
+                            <span class="text-xs sm:text-sm text-gray-400 mt-2 line-through">750৳</span> <!-- Original Price -->
+                            <span class="text-1xl sm:text-2x1 font-black text-amber-600">600৳</span> <!-- Discounted Price -->
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+                <!-- Product Card 4 -->
+
+                <div
+                    class="bg-white border border-gray-100 rounded-1xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+
+                    <div class="relative w-full h-auto bg-gray-100 overflow-hidden">
+                        <a href="/Product_4/product_4.html">
+                            <img src="/Product_4/sand-formal_1-shirt.png" alt="Product Name Here"
+                                class="w-full w-full sm:h-[400px] object-cover object-center" />
+                        </a>
+                        <span
+                            class="absolute top-3 left-3 bg-red-500 text-white text-xs font-bold px-2.5 py-1 rounded-full shadow">20%
+                            OFF</span>
+                    </div>
+
+                    <div class="mt-4 flex-grow flex pl-4 flex-col justify-between">
+                        <div>
+                            <span class="text-[10px] sm:text-xs font-semibold tracking-wider text-amber-600 uppercase"
+                                id="shirt">Shirt</span>
+
+
+                            <h3 class="text-xs sm:text-lg font-bold text-gray-800 mt-1 line-clamp-2"><a
+                                    href="/Product_4/product_4.html">Premium Quality Stretch Fabric Formal Shirt</a></h3>
+                        </div>
+
+                        <div class="flex ml-auto pr-5 gap-3 mb-3">
+                            <span class="text-xs sm:text-sm text-gray-600 mt-2 line-through">750৳</span> <!-- Original Price -->
+                            <span class="text-1xl sm:text-2x1 font-black text-amber-600">600৳</span> <!-- Discounted Price -->
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+            </div> <!---Product card End-->
+
+        </div>
+
+
+                    <!--2 Cards Section-->
+
+        <div class="max-w-7xl mx-auto px-4 mt-9 sm:px-6 lg:px-8">
+
+            <div class="text-center mb-10">
+                <h2 class="text-2xl font-extrabold text-amber-600 sm:text-2xl">Old Money Collection</h2>
+                <p class="mt-3 max-w-2xl mx-auto text-base text-gray-500 sm:mt-4">Choose your style and order
+                    directly.</p>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+
+                <!-- Product Card 1 -->
+
+                <div
+                    class="bg-white border border-gray-100 rounded-1xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+
+                    <div class="relative w-full h-auto bg-gray-100 overflow-hidden">
+                        <a href="/Product_5/product_5.html">
+                            <img src="/Product_5/brown-white-stripe_1-shirt.png" alt="Product Name Here"
+                                class="w-full sm:h-[400px] object-cover object-center" />
+                        </a>
+                        <span
+                            class="absolute top-3 left-3 bg-red-500 text-white text-xs font-bold px-2.5 py-1 rounded-full shadow">20%
+                            OFF</span>
+                    </div>
+
+                    <div class="mt-4 pl-4 flex-grow flex flex-col justify-between">
+                        <div>
+                            <!-- Text is 10px on mobile, grows to 12px (text-xs) on desktop -->
+                            <span class="text-[10px] sm:text-xs font-semibold tracking-wider text-amber-600 uppercase"
+                                id="shirt">
+                                Shirt
+                            </span>
+
+                            <!-- Text is 12px (text-xs) on mobile, grows to 14px (text-sm) on desktop -->
+                            <h3 class="text-xs sm:text-lg font-bold text-gray-800 mt-1 line-clamp-2">
+                                <a href="/Product_5/product_5.html">Premium Quality Professonal Aesthetic Stripe Old Money Shirt</a>
+                            </h3>
+                        </div>
+
+                        <div class="flex ml-auto pr-5 gap-3 mb-3">
+                            <span class="text-xs sm:text-sm text-gray-400 mt-2 line-through">750৳</span> <!-- Original Price -->
+                            <span class="text-1xl sm:text-2x1 font-black text-amber-600">600৳</span> <!-- Discounted Price -->
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+                <!-- Product Card 2 -->
+
+                <div
+                    class="bg-white border border-gray-100 rounded-1xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                    <div class="relative w-full h-auto bg-gray-100 overflow-hidden">
+                        <a href="/Product_6/product_6.html">
+                            <img src="/Product_6/golden-white-stripe_1-shirt.png" alt="Product Name Here"
+                                class="w-full sm:h-[400px] object-cover object-center" />
+                        </a>
+                        <span
+                            class="absolute top-3 left-3 bg-red-500 text-white text-xs font-bold px-2.5 py-1 rounded-full shadow">20%
+                            OFF</span>
+                    </div>
+                    <div class="mt-4 flex-grow pl-4 flex flex-col justify-between">
+                        <div>
+                            <span class="text-[10px] sm:text-xs font-semibold tracking-wider text-amber-600 uppercase"
+                                id="shirt">Shirt</span>
+
+
+                            <h3 class="text-xs sm:text-lg font-bold text-gray-800 mt-1 line-clamp-2"><a
+                                    href="/Product_6/product_6.html">Premium Quality Professonal Aesthetic Old Money Shirt</a></h3>
+                        </div>
+                        <div class="flex ml-auto pr-5 gap-3 mb-3">
+                            <span class="text-xs sm:text-sm text-gray-400  line-through">750৳</span> <!-- Original Price -->
+                            <span class="text-1xl sm:text-2x1 font-black text-amber-600">600৳</span> <!-- Discounted Price -->
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Product Card 3 -->
+
+                <div
+                    class="bg-white border border-gray-100 rounded-1xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+
+                    <div class="relative w-full h-auto bg-gray-100 overflow-hidden">
+                        <a href="/Product_7/product_7.html">
+                            <img src="/Product_7/blue-white-stripe_1-shirt.png" alt="Product Name Here"
+                                class="w-full w-full sm:h-[400px] object-cover object-center" />
+                        </a>
+                        <span
+                            class="absolute top-3 left-3 bg-red-500 text-white text-xs font-bold px-2.5 py-1 rounded-full shadow">20%
+                            OFF</span>
+                    </div>
+
+                    <div class="mt-4 flex-grow pl-4 flex flex-col justify-between">
+                        <div>
+                            <span class="text-[10px] sm:text-xs font-semibold tracking-wider text-amber-600 uppercase"
+                                id="shirt">Shirt</span>
+
+
+                            <h3 class="text-xs sm:text-lg font-bold text-gray-800 mt-1 line-clamp-2"><a
+                                    href="/Product_7/product_7.html">Premium Quality Professonal Aesthetic Old Money Shirt</a></h3>
+                        </div>
+
+                        <div class="flex ml-auto pr-5 gap-3 mb-3">
+
+                            <span class="text-xs sm:text-sm text-gray-400 mt-2 line-through">750৳</span> <!-- Original Price -->
+                            <span class="text-1xl sm:text-2x1 font-black text-amber-600">600৳</span> <!-- Discounted Price -->
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+                <!-- Product Card 4 -->
+
+                <div
+                    class="bg-white border border-gray-100 rounded-1xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+
+                    <div class="relative w-full h-auto bg-gray-100 overflow-hidden">
+                        <a href="/Product_8/product_8.html">
+                            <img src="/Product_8/black-white-stripe_1-shirt.png" alt="Product Name Here"
+                                class="w-full w-full sm:h-[400px] object-cover object-center" />
+                        </a>
+                        <span
+                            class="absolute top-3 left-3 bg-red-500 text-white text-xs font-bold px-2.5 py-1 rounded-full shadow">20%
+                            OFF</span>
+                    </div>
+
+                    <div class="mt-4 flex-grow flex pl-4 flex-col justify-between">
+                        <div>
+                            <span class="text-[10px] sm:text-xs font-semibold tracking-wider text-amber-600 uppercase"
+                                id="shirt">Shirt</span>
+
+
+                            <h3 class="text-xs sm:text-lg font-bold text-gray-800 mt-1 line-clamp-2"><a
+                                    href="/Product_8/product_8.html">Premium Quality Professonal Aesthetic Old Money Shirt</a></h3>
+                        </div>
+
+                        <div class="flex ml-auto pr-5 gap-3 mb-3">
+                            <span class="text-xs sm:text-sm text-gray-600 mt-2 line-through">750৳</span> <!-- Original Price -->
+                            <span class="text-1xl sm:text-2x1 font-black text-amber-600">600৳</span> <!-- Discounted Price -->
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <!-- Product Card 5 -->
+
+                <div
+                    class="bg-white border border-gray-100 rounded-1xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+
+                    <div class="relative w-full h-auto bg-gray-100 overflow-hidden">
+                        <a href="/Product_9/product_9.html">
+                            <img src="/Product_9/grey-white-stripe_1-shirt.png" alt="Product Name Here"
+                                class="w-full w-full sm:h-[400px] object-cover object-center" />
+                        </a>
+                        <span
+                            class="absolute top-3 left-3 bg-red-500 text-white text-xs font-bold px-2.5 py-1 rounded-full shadow">20%
+                            OFF</span>
+                    </div>
+
+                    <div class="mt-4 flex-grow flex pl-4 flex-col justify-between">
+                        <div>
+                            <span class="text-[10px] sm:text-xs font-semibold tracking-wider text-amber-600 uppercase"
+                                id="shirt">Shirt</span>
+
+
+                            <h3 class="text-xs sm:text-lg font-bold text-gray-800 mt-1 line-clamp-2"><a
+                                    href="/Product_9/product_9.html">Premium Quality Professonal Aesthetic Old Money Shirt</a></h3>
+                        </div>
+
+                        <div class="flex ml-auto pr-5 gap-3 mb-3">
+                            <span class="text-xs sm:text-sm text-gray-600 mt-2 line-through">750৳</span> <!-- Original Price -->
+                            <span class="text-1xl sm:text-2x1 font-black text-amber-600">600৳</span> <!-- Discounted Price -->
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+
+            </div> <!---Product card End-->
+
+        </div>
+
+
+                   <!--3 Cards Section-->
+
+
+        <div class="max-w-7xl mx-auto px-4 mt-9 sm:px-6 lg:px-8">
+
+            <div class="text-center mb-10">
+                <h2 class="text-2xl font-extrabold text-amber-600 sm:text-2xl">Thick cotton Collection</h2>
+                <p class="mt-3 max-w-2xl mx-auto text-base text-gray-500 sm:mt-4">Choose your style and order
+                    directly.</p>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+
+                <!-- Product Card 1 -->
+
+                <div
+                    class="bg-white border border-gray-100 rounded-1xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+
+                    <div class="relative w-full h-auto bg-gray-100 overflow-hidden">
+                        <a href="/Product_10/product_10.html">
+                            <img src="/Product_10/red-white-thick-cotton_1-shirt.png" alt="Product Name Here"
+                                class="w-full sm:h-[400px] object-cover object-center" />
+                        </a>
+                        <span
+                            class="absolute top-3 left-3 bg-red-500 text-white text-xs font-bold px-2.5 py-1 rounded-full shadow">20%
+                            OFF</span>
+                    </div>
+
+                    <div class="mt-4 pl-4 flex-grow flex flex-col justify-between">
+                        <div>
+                            <!-- Text is 10px on mobile, grows to 12px (text-xs) on desktop -->
+                            <span class="text-[10px] sm:text-xs font-semibold tracking-wider text-amber-600 uppercase"
+                                id="shirt">
+                                Shirt
+                            </span>
+
+                            <!-- Text is 12px (text-xs) on mobile, grows to 14px (text-sm) on desktop -->
+                            <h3 class="text-xs sm:text-lg font-bold text-gray-800 mt-1 line-clamp-2">
+                                <a href="/Product_10/product_10.html">New Collection Soft & thick Cotton Red & White Stripe Aesthetic Shirt</a>
+                            </h3>
+                        </div>
+
+                        <div class="flex ml-auto pr-5 gap-3 mb-3">
+                            <span class="text-xs sm:text-sm text-gray-400 mt-2 line-through">650৳</span> <!-- Original Price -->
+                            <span class="text-1xl sm:text-2x1 font-black text-amber-600">520৳</span> <!-- Discounted Price -->
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+                <!-- Product Card 2 -->
+
+                <div
+                    class="bg-white border border-gray-100 rounded-1xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                    <div class="relative w-full h-auto bg-gray-100 overflow-hidden">
+                        <a href="/Product_11/product_11.html">
+                            <img src="/Product_11/light-red-white-thick-cotton_1-shirt.png" alt="Product Name Here"
+                                class="w-full sm:h-[400px] object-cover object-center" />
+                        </a>
+                        <span
+                            class="absolute top-3 left-3 bg-red-500 text-white text-xs font-bold px-2.5 py-1 rounded-full shadow">20%
+                            OFF</span>
+                    </div>
+                    <div class="mt-4 flex-grow pl-4 flex flex-col justify-between">
+                        <div>
+                            <span class="text-[10px] sm:text-xs font-semibold tracking-wider text-amber-600 uppercase"
+                                id="shirt">Shirt</span>
+
+
+                            <h3 class="text-xs sm:text-lg font-bold text-gray-800 mt-1 line-clamp-2"><a
+                                    href="/Product_11/product_11.html">New Collection Soft & thick Cotton Light Red & White Stripe Aesthetic Shirt</a></h3>
+                        </div>
+                        <div class="flex ml-auto pr-5 gap-3 mb-3">
+                            <span class="text-xs sm:text-sm text-gray-400  line-through">650৳</span> <!-- Original Price -->
+                            <span class="text-1xl sm:text-2x1 font-black text-amber-600">520৳</span> <!-- Discounted Price -->
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Product Card 3 -->
+
+                <div
+                    class="bg-white border border-gray-100 rounded-1xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+
+                    <div class="relative w-full h-auto bg-gray-100 overflow-hidden">
+                        <a href="/Product_12/product_12.html">
+                            <img src="/Product_12/blue-red-white-thick-cotton_1-shirt.png" alt="Product Name Here"
+                                class="w-full w-full sm:h-[400px] object-cover object-center" />
+                        </a>
+                        <span
+                            class="absolute top-3 left-3 bg-red-500 text-white text-xs font-bold px-2.5 py-1 rounded-full shadow">20%
+                            OFF</span>
+                    </div>
+
+                    <div class="mt-4 flex-grow pl-4 flex flex-col justify-between">
+                        <div>
+                            <span class="text-[10px] sm:text-xs font-semibold tracking-wider text-amber-600 uppercase"
+                                id="shirt">Shirt</span>
+
+
+                            <h3 class="text-xs sm:text-lg font-bold text-gray-800 mt-1 line-clamp-2"><a
+                                    href="/Product_12/product_12.html">New Collection Soft & thick Cotton Blue, Red & White Stripe Aesthetic Shirt</a></h3>
+                        </div>
+
+                        <div class="flex ml-auto pr-5 gap-3 mb-3">
+
+                            <span class="text-xs sm:text-sm text-gray-400 mt-2 line-through">650৳</span> <!-- Original Price -->
+                            <span class="text-1xl sm:text-2x1 font-black text-amber-600">520৳</span> <!-- Discounted Price -->
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+
+            </div> <!---Product card End-->
+
+        </div>
+
+    </section>
+
+    </div>
+    </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 mt-auto">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center gap-2 mb-4 md:mb-0">
+
+                    <span class="font-bold text-lg text-gray-900">Trio Fashion</span>
+                </div>
+                <div class="flex space-x-6 md:order-2">
+                    <a href="https://www.facebook.com/TrioFashion07" class="text-gray-400 hover:text-gray-500">
+                        <span class="sr-only">Facebook</span>
+                        <i class="fa-brands fa-facebook text-xl"></i>
+                    </a>
+                    <a href="https://www.facebook.com/TrioFashion07" class="text-gray-400 hover:text-gray-500">
+                        <span class="sr-only">Instagram</span>
+                        <i class="fa-brands fa-instagram text-xl"></i>
+                    </a>
+                    <a href="https://wa.me/8801815272676" class="text-gray-400 hover:text-gray-500">
+                        <span class="sr-only">WhatsApp</span>
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                    </a>
+                </div>
+                <div class="mt-8 md:mt-0 md:order-1">
+                    <p class="text-center text-base text-gray-400">
+                        &copy; 2026 Trio Fashion. All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="products.js"></script>
+</body>
+
+</html>
